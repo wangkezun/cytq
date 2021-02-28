@@ -27,8 +27,6 @@ def main(wf):
 			wf.add_item(rows[1] + ',' + rows[2] + ',' + rows[3],
 						str(rows[4]) + ' ' + str(rows[5]), arg=cPickle.dumps(rows), uid=i, valid=True)
 
-	wf.store_data(u'cy-city', args[0])
-
 	# Add an item to Alfred feedback
 
 	wf.send_feedback()
