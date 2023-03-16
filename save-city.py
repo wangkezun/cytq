@@ -1,22 +1,22 @@
 # coding=utf-8
 import sys
-from workflow import Workflow3,notify
+from ualfred import Workflow3,notify
 
 log = None
 
 
 def main(wf):
-	import cPickle
+	import json
 	# Get args from Workflow, already in normalized Unicode
 	args = wf.args
-	result = cPickle.loads(str(args[0]))
+	result = json.loads(str(args[0]))
 
 	wf.store_data('cy-city', result)
 
 	# Add an item to Alfred feedback
 	log.debug(result[3])
 
-	print result
+	print(result)
 
 if __name__ == '__main__':
 	# Create a global `Workflow` object

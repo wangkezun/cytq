@@ -1,57 +1,57 @@
 # coding=utf-8
 import sys
-from workflow import Workflow3, notify
+from ualfred import Workflow3, notify
 
 log = None
 
 
 def main(wf):
-	import cPickle
+	import pickle
 	from data import Data
-	from workflow import web
+	from ualfred import web
 
-	city = wf.stored_data(u'cy-city')
-	api_key = wf.get_password(u'apiKey')
+	city = wf.stored_data('cy-city')
+	api_key = wf.get_password('apiKey')
 
 	if city is None:
-		wf.add_item(u'请通过cy-opt 设置所在城市')
+		wf.add_item('请通过cy-opt 设置所在城市')
 		wf.send_feedback()
 		return
 	if api_key is None:
-		api_key = u'TAkhjf8d1nlSlspN'
+		api_key = 'TAkhjf8d1nlSlspN'
 
 	city_name = city[1]
 
-	url = u'https://api.caiyunapp.com/v2/' + api_key + u'/' + city[5] + u',' + city[4] + u'/forecast.json'
+	url = 'https://api.caiyunapp.com/v2/' + api_key + '/' + city[5] + ',' + city[4] + '/forecast.json'
 	log.debug(url)
 	r = web.get(url)
 	data = r.json()
 	log.debug(data)
-	if u'ok' == data[u'status']:
-		result = data[u'result']
-		wf.add_item(subtitle=city_name + u'未来24小时天气预报', title=result[u'hourly'][u'description'])
-		wf.add_item(title=result[u'minutely'][u'description'])
-		daily = result[u'daily']
+	if 'ok' == data['status']:
+		result = data['result']
+		wf.add_item(subtitle=city_name + '未来24小时天气预报', title=result['hourly']['description'])
+		wf.add_item(title=result['minutely']['description'])
+		daily = result['daily']
 		for i in range(1, 5):
-			skycon = daily[u'skycon'][i]
-			temp = daily[u'temperature'][i]
-			wind = daily[u'wind'][i]
-			ultraviolet = daily[u'ultraviolet'][i]
-			aqi = daily[u'aqi'][i]
-			subtitle = city_name + skycon[u'date'] + u'天气预报'
-			item = Data.weather_dict.get(skycon[u'value'])
+			skycon = daily['skycon'][i]
+			temp = daily['temperature'][i]
+			wind = daily['wind'][i]
+			ultraviolet = daily['ultraviolet'][i]
+			aqi = daily['aqi'][i]
+			subtitle = city_name + skycon['date'] + '天气预报'
+			item = Data.weather_dict.get(skycon['value'])
 			# add first
-			title = item.get(u'name')
+			title = item.get('name')
 			# add temperature
-			title += u'\t温度:' + str(temp[u'max']) + u'°~' + str(temp[u'min']) + u'° \t'
+			title += '\t温度:' + str(temp['max']) + '°~' + str(temp['min']) + '° \t'
 			# add wind
-			title += Data.get_wind_direction(wind[u'avg'][u'direction']) + Data.get_wind_speed(wind[u'avg'][u'speed'])
+			title += Data.get_wind_direction(wind['avg']['direction']) + Data.get_wind_speed(wind['avg']['speed'])
 			# add ultraviolet
-			title += u'\t紫外线:' + ultraviolet[u'desc']
+			title += '\t紫外线:' + ultraviolet['desc']
 			# add aqi
-			title += u'\tAQI:' + str(aqi['min']) + u'~' + str(aqi['max'])
+			title += '\tAQI:' + str(aqi['min']) + '~' + str(aqi['max'])
 
-			wf.add_item(subtitle=subtitle, title=title, icon=item.get(u'icon'), copytext=subtitle + u':' + title)
+			wf.add_item(subtitle=subtitle, title=title, icon=item.get('icon'), copytext=subtitle + ':' + title)
 
 	wf.send_feedback()
 

@@ -1,31 +1,23 @@
 # coding=utf-8
 import sys
 import csv
-from workflow import Workflow3, notify
+import json
+from ualfred import Workflow3, notify
 
 log = None
 
-
-def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):
-	csv_reader = csv.reader(utf8_data, dialect=dialect, **kwargs)
-	for row in csv_reader:
-		yield [unicode(cell, 'utf-8') for cell in row]
-
-
 def main(wf):
-
-	import cPickle
 
 	# Get args from Workflow, already in normalized Unicode
 	args = wf.args
 
-	reader = unicode_csv_reader(open('cityidloc.csv'))
-	for i, rows in enumerate(reader):
-		if rows[1] == args[0] or rows[2] == args[0] or rows[3] == \
-				args[0]:
-			log.debug(rows[1])
-			wf.add_item(rows[1] + ',' + rows[2] + ',' + rows[3],
-						str(rows[4]) + ' ' + str(rows[5]), arg=cPickle.dumps(rows), uid=i, valid=True)
+	with open('cityidloc.csv', newline='', encoding='utf-8') as csvfile:
+		csv_reader = csv.reader(csvfile, delimiter=',')
+		for rows in csv_reader:
+			if rows[1] == args[0] or rows[2] == args[0] or rows[3] == args[0]:
+				log.debug(rows)
+				wf.add_item(rows[1] + ',' + rows[2] + ',' + rows[3],
+							str(rows[4]) + ' ' + str(rows[5]), arg=json.dumps(rows), uid=csv_reader.line_num, valid=True)
 
 	wf.store_data(u'cy-city', args[0])
 

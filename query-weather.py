@@ -1,16 +1,17 @@
 # coding=utf-8
 import sys
-from workflow import Workflow3, notify
+from ualfred import Workflow3, notify
 
 log = None
 
 
 def main(wf):
-	import cPickle
+	import pickle
 	from workflow import web
 
 	args = wf.args
-	query = cPickle.loads(str(args[0]))
+	query = pickle.loads(str(args[0]))
+	log.debug('test')
 	url = 'https://api.caiyunapp.com/v2/' + wf.get_password('apiKey') + '/' + query[4] + ',' + query[5] + '/'
 	if query[6] == 1:
 		log.debug(url)

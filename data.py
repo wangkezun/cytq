@@ -7,65 +7,65 @@ class Data:
 	def __init__(self):
 		pass
 
-	weather_dict = {u'CLEAR_DAY': {u'name': u'晴天', u'icon': u'assets/sun-3.png'},
-					u'CLEAR_NIGHT': {u'name': u'晴夜', u'icon': u'assets/moon-1.png'},
-					u'PARTLY_CLOUDY_DAY': {u'name': u'多云', u'icon': u'assets/cloudy.png'},
-					u'PARTLY_CLOUDY_NIGHT': {u'name': u'多云', u'icon': u'assets/cloudy-night.png'},
-					u'CLOUDY': {u'name': u'阴', u'icon': u'assets/cloud.png'},
-					u'RAIN': {u'name': u'雨', u'icon': u'assets/rain-1.png'},
-					u'SNOW': {u'name': u'雪', u'icon': u'assets/snow.png'},
-					u'WIND': {u'name': u'风', u'icon': u'assets/windy.png'},
-					u'FOG': {u'name': u'雾', u'icon': u'assets/fogg.png'}, u'HAZE': {u'name': u'霾'},
-					u'SLEET': {u'name': u'冻雨'}}
+	weather_dict = {'CLEAR_DAY': {'name': '晴天', 'icon': 'assets/sun-3.png'},
+					'CLEAR_NIGHT': {'name': '晴夜', 'icon': 'assets/moon-1.png'},
+					'PARTLY_CLOUDY_DAY': {'name': '多云', 'icon': 'assets/cloudy.png'},
+					'PARTLY_CLOUDY_NIGHT': {'name': '多云', 'icon': 'assets/cloudy-night.png'},
+					'CLOUDY': {'name': '阴', 'icon': 'assets/cloud.png'},
+					'RAIN': {'name': '雨', 'icon': 'assets/rain-1.png'},
+					'SNOW': {'name': '雪', 'icon': 'assets/snow.png'},
+					'WIND': {'name': '风', 'icon': 'assets/windy.png'},
+					'FOG': {'name': '雾', 'icon': 'assets/fogg.png'}, 'HAZE': {'name': '霾'},
+					'SLEET': {'name': '冻雨'}}
 
 	@staticmethod
 	def get_wind_direction(wd):
 		if wd <= 22.5 or wd > 337.5:
-			return u'北风'
+			return '北风'
 		elif 22.5 < wd <= 67.5:
-			return u'东北风'
+			return '东北风'
 		elif 67.5 < wd <= 112.5:
-			return u'东风'
+			return '东风'
 		elif 112.5 < wd <= 157.5:
-			return u'东南风'
+			return '东南风'
 		elif 157.5 < wd <= 202.5:
-			return u'南风'
+			return '南风'
 		elif 202.5 < wd <= 247.5:
-			return u'西南风'
+			return '西南风'
 		elif 247.5 < wd <= 292.5:
-			return u'西风'
+			return '西风'
 		elif 292.5 < wd <= 337.5:
-			return u'西北风'
+			return '西北风'
 
 	@staticmethod
 	def get_wind_speed(ws):
 		if ws <= 2:
-			return u'无风'
+			return '无风'
 		if 2 < ws <= 6:
-			return u'软风'
+			return '软风'
 		elif 6 < ws <= 12:
-			return u'轻风'
+			return '轻风'
 		elif 12 < ws <= 19:
-			return u'缓风'
+			return '缓风'
 		elif 19 < ws <= 30:
-			return u'和风'
+			return '和风'
 		elif 30 < ws <= 40:
-			return u'清风'
+			return '清风'
 		elif 40 < ws <= 51:
-			return u'强风'
+			return '强风'
 		elif 51 < ws <= 62:
-			return u'疾风'
+			return '疾风'
 		elif 62 < ws <= 75:
-			return u'烈风'
+			return '烈风'
 		elif 75 < ws <= 87:
-			return u'增强烈风'
+			return '增强烈风'
 		elif 87 < ws <= 103:
-			return u'暴风'
+			return '暴风'
 		elif 103 < ws <= 149:
-			return u'台风'
+			return '台风'
 		elif 149 < ws <= 183:
-			return u'强台飓风'
+			return '强台飓风'
 		elif 183 < ws <= 220:
-			return u'超强台飓风'
+			return '超强台飓风'
 		else:
-			return u'极强台飓风'
+			return '极强台飓风'

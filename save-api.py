@@ -1,7 +1,7 @@
 # coding=utf-8
 import sys
 import csv
-from workflow import Workflow3, notify
+from ualfred import Workflow3, notify
 
 log = None
 

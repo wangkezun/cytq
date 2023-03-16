@@ -136,6 +136,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>caiyun.weather</string>
 			</dict>
@@ -151,6 +153,12 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>escaping</key>
@@ -168,7 +176,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python real-weather.py</string>
+				<string>python3 real-weather.py</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -187,13 +195,19 @@
 			<key>uid</key>
 			<string>D2062457-9E87-4999-8D03-8C3A3EDF7121</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>escaping</key>
@@ -211,7 +225,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python forecast.py</string>
+				<string>python3 forecast.py</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -230,7 +244,7 @@
 			<key>uid</key>
 			<string>0B04CB12-A253-48FF-95E3-F693FD5F59FD</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -269,7 +283,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python save-api.py "{query}"</string>
+				<string>python3 save-api.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -341,6 +355,12 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -383,13 +403,19 @@ exit</string>
 			<key>uid</key>
 			<string>4012B059-0661-4802-996D-5BD216D0B22C</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -407,7 +433,7 @@ exit</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python set-city.py "{query}"</string>
+				<string>python3 set-city.py "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -426,7 +452,7 @@ exit</string>
 			<key>uid</key>
 			<string>951D3E41-CFB0-4228-9201-129E4B33B947</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -436,7 +462,7 @@ exit</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python save-city.py  "{query}"</string>
+				<string>python3 save-city.py  "{query}"</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -454,6 +480,8 @@ exit</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>caiyun-set</string>
 			</dict>
@@ -493,88 +521,94 @@ exit</string>
 		<key>0B04CB12-A253-48FF-95E3-F693FD5F59FD</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<real>310</real>
 			<key>ypos</key>
-			<integer>150</integer>
+			<real>150</real>
 		</dict>
 		<key>16684B68-5FA9-47E6-85FC-BE1182777545</key>
 		<dict>
 			<key>xpos</key>
-			<integer>620</integer>
+			<real>620</real>
 			<key>ypos</key>
-			<integer>270</integer>
+			<real>270</real>
 		</dict>
 		<key>2C0D9638-C4E7-42DA-92E0-4B98118A3764</key>
 		<dict>
 			<key>xpos</key>
-			<integer>90</integer>
+			<real>90</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>30</real>
 		</dict>
 		<key>2FC10B1D-2BE4-4080-95AE-6CB7F39F9F07</key>
 		<dict>
 			<key>xpos</key>
-			<integer>620</integer>
+			<real>620</real>
 			<key>ypos</key>
-			<integer>390</integer>
+			<real>390</real>
 		</dict>
 		<key>4012B059-0661-4802-996D-5BD216D0B22C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<real>310</real>
 			<key>ypos</key>
-			<integer>270</integer>
+			<real>270</real>
 		</dict>
 		<key>951D3E41-CFB0-4228-9201-129E4B33B947</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<real>310</real>
 			<key>ypos</key>
-			<integer>390</integer>
+			<real>390</real>
 		</dict>
 		<key>A5E6BEFA-8173-4BA3-8B69-61D43BD47F53</key>
 		<dict>
 			<key>xpos</key>
-			<integer>90</integer>
+			<real>90</real>
 			<key>ypos</key>
-			<integer>150</integer>
+			<real>150</real>
 		</dict>
 		<key>D19EF68C-7116-41A2-9D6A-7A77E9FC8F41</key>
 		<dict>
 			<key>xpos</key>
-			<integer>90</integer>
+			<real>90</real>
 			<key>ypos</key>
-			<integer>270</integer>
+			<real>270</real>
 		</dict>
 		<key>D2062457-9E87-4999-8D03-8C3A3EDF7121</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<real>310</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>30</real>
 		</dict>
 		<key>F057A8B3-B45C-4E5E-99A7-3F6F5CC7499E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>470</integer>
+			<real>470</real>
 			<key>ypos</key>
-			<integer>270</integer>
+			<real>270</real>
 		</dict>
 		<key>F6DA22B3-AAEE-43E1-93FA-3857BED10BF6</key>
 		<dict>
 			<key>xpos</key>
-			<integer>470</integer>
+			<real>470</real>
 			<key>ypos</key>
-			<integer>390</integer>
+			<real>390</real>
 		</dict>
 		<key>FD1326EF-49AF-4990-82BC-06974736365A</key>
 		<dict>
 			<key>xpos</key>
-			<integer>90</integer>
+			<real>90</real>
 			<key>ypos</key>
-			<integer>390</integer>
+			<real>390</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>2.0</string>
 	<key>webaddress</key>
 	<string>wkz.io</string>
 </dict>
