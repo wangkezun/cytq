@@ -14,10 +14,9 @@ def main(wf):
 	with open('cityidloc.csv', newline='', encoding='utf-8') as csvfile:
 		csv_reader = csv.reader(csvfile, delimiter=',')
 		for rows in csv_reader:
-			if rows[1] == args[0] or rows[2] == args[0] or rows[3] == args[0]:
+			if args[0] in rows[1]:
 				log.debug(rows)
-				wf.add_item(rows[1] + ',' + rows[2] + ',' + rows[3],
-							str(rows[4]) + ' ' + str(rows[5]), arg=json.dumps(rows), uid=csv_reader.line_num, valid=True)
+				wf.add_item(rows[1], arg=json.dumps(rows), uid=csv_reader.line_num, valid=True)
 
 	wf.store_data(u'cy-city', args[0])
 

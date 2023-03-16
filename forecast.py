@@ -22,7 +22,7 @@ def main(wf):
 
 	city_name = city[1]
 
-	url = 'https://api.caiyunapp.com/v2/' + api_key + '/' + city[5] + ',' + city[4] + '/forecast.json'
+	url = 'https://api.caiyunapp.com/v2/' + api_key + '/' + city[2] + ',' + city[3] + '/forecast.json'
 	log.debug(url)
 	r = web.get(url)
 	data = r.json()
