@@ -18,8 +18,6 @@ def main(wf):
 				log.debug(rows)
 				wf.add_item(rows[1], arg=json.dumps(rows), uid=csv_reader.line_num, valid=True)
 
-	wf.store_data(u'cy-city', args[0])
-
 	# Add an item to Alfred feedback
 
 	wf.send_feedback()
